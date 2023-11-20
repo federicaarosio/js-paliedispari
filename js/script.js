@@ -62,20 +62,30 @@ console.log(userWord);
 //calcolo la lunghezza della parola e la divido per due
     //SE
         //la prima metà è uguale alla seconda metà
-            //la parola è palindroma
+            //la lettera al primo posto (posto ZERO) nella stringa è diversa alla lettera nell'ultimo posto nella stringa
+            //la parola NON è palindroma
         //altrimenti
             //la parola non è palindroma
 
 const wordLength = userWord.length;
 console.log("your word has " + wordLength + " letters");
 
-;debugger
-for (let i = 0; i < wordLength / 2; i++) {
-    if (userWord[i] !== userWord[wordLength - 1 - i]) {
-        console.log("Your word isn't a palindrome");
-    } else {
-        console.log("Your word is a palindrome");
-    }
+// for (let i = 0; i < wordLength / 2; i++) {
+//     if (userWord[i] !== userWord[wordLength - 1 - i]) {
+//         console.log("Your word isn't a palindrome")
+//     } else {
+//         console.log ("Your word is a palindrome");
+//     }
     
+// }
+
+let i = 0;
+let palindrome = false;
+
+while ((userWord[i] === userWord[wordLength - 1 - i])) {
+    palindrome = true;
+    i++
 }
+
+console.log(palindrome);
 
