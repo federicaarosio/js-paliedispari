@@ -1,11 +1,3 @@
-// Pari e Dispari:
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-// Sommiamo i due numeri
-// Stabiliamo se la somma dei due numeri è pari o dispari (usando un'altra funzione)
-// Dichiariamo chi ha vinto.
-
-
 //PARI E DISPARI
 
 //chiedo di scegliere pari o dispari all'utente
@@ -47,45 +39,37 @@ if (isEven(sum) === true) {
 
 
 // ---------------------------------------------------------------------------------------------------------
-// Palidroma:
-// Chiedere all’utente di inserire una parola
-// Creare una funzione per capire se la parola inserita è palindroma
-// E' vietato usare split(), reverse() e simili.
-
 //PALINDROMA
 
-//chiedo all'utente una parola
-const userWord = prompt("Type a word");
-console.log(userWord);
 
 
 //calcolo la lunghezza della parola e la divido per due
-    //SE
-        //la prima metà è uguale alla seconda metà
-            //la lettera al primo posto (posto ZERO) nella stringa è diversa alla lettera nell'ultimo posto nella stringa
-            //la parola NON è palindroma
-        //altrimenti
-            //la parola non è palindroma
+//SE
+//la prima metà è uguale alla seconda metà
+//la lettera al primo posto (posto ZERO) nella stringa è diversa dalla lettera nell'ultimo posto nella stringa
+//la parola NON è palindroma
+//altrimenti
+//la parola è palindroma
 
-const wordLength = userWord.length;
-console.log("your word has " + wordLength + " letters");
+//chiedo all'utente una parola
 
-// for (let i = 0; i < wordLength / 2; i++) {
-//     if (userWord[i] !== userWord[wordLength - 1 - i]) {
-//         console.log("Your word isn't a palindrome")
-//     } else {
-//         console.log ("Your word is a palindrome");
-//     }
+function checkPalindrome(wordToCheck) {
+    //Trovo la lunghezza della stringa
+    const wordLength = wordToCheck.length;
     
-// }
+    //loop
+    let i = 0;
+    let palindrome = false;
+    
+    while ((wordToCheck[i] === wordToCheck[wordLength - 1 - i])) {
+        palindrome = true;
+        i++
+        return ("Your word is a palindrome");
+    }
 
-let i = 0;
-let palindrome = false;
-
-while ((userWord[i] === userWord[wordLength - 1 - i])) {
-    palindrome = true;
-    i++
+    return ("Your word isn't a palindrome");
+    
 }
 
-console.log(palindrome);
-
+const userWord = prompt("Type a word");
+console.log(checkPalindrome (userWord));
